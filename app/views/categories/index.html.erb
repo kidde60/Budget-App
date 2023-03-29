@@ -1,14 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Categories</h1>
+<h1>ALL CARTEGORIES</h1>
 
 <div id="categories">
-  <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
+<% if @categories.empty?%>
+<p> No Category Availble</p>
+<%else%>
+<ul>
+  <% @categories.each do |category| %>   
+    <li>
+      <%= link_to  category do%>
+     <%= render category %>
+      <%end%>
+    </li>
   <% end %>
+  </ul>
+<%end%>
 </div>
 
 <%= link_to "New category", new_category_path %>
