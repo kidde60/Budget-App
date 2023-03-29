@@ -70,3 +70,84 @@ FOREIGN KEY ("transaction_id")
   [1m[36mTRANSACTION (25.1ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(2122188891063861270)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-03-28 13:07:19 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/william/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/william/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 21.2ms | Allocations: 605)
+Completed 200 OK in 68ms (Views: 28.6ms | ActiveRecord: 0.0ms | Allocations: 5053)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-03-28 13:07:39 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/" for 127.0.0.1 at 2023-03-28 14:38:49 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (88.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/william/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/william/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 32.5ms | Allocations: 461)
+Completed 200 OK in 195ms (Views: 56.1ms | ActiveRecord: 0.0ms | Allocations: 3178)
+
+
+Started GET "/transactions" for 127.0.0.1 at 2023-03-28 14:39:42 +0300
+Processing by TransactionsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering transactions/index.html.erb within layouts/application
+  [1m[36mTransaction Load (106.8ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
+  ↳ app/views/transactions/index.html.erb:6
+  Rendered transactions/index.html.erb within layouts/application (Duration: 150.2ms | Allocations: 1364)
+  Rendered layout layouts/application.html.erb (Duration: 763.3ms | Allocations: 88675)
+Completed 200 OK in 885ms (Views: 659.7ms | ActiveRecord: 106.8ms | Allocations: 92888)
+
+
+Started GET "/transactions/new" for 127.0.0.1 at 2023-03-28 14:39:46 +0300
+Processing by TransactionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering transactions/new.html.erb within layouts/application
+  Rendered transactions/_form.html.erb (Duration: 473.4ms | Allocations: 4464)
+  Rendered transactions/new.html.erb within layouts/application (Duration: 494.9ms | Allocations: 4775)
+  Rendered layout layouts/application.html.erb (Duration: 506.9ms | Allocations: 6881)
+Completed 200 OK in 679ms (Views: 508.2ms | ActiveRecord: 128.9ms | Allocations: 11099)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2122188891063861270)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeviseToUsers (20230328121305)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (171.9ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp(6)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp(6)[0m
+  [1m[35m (130.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (43.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230328121305"]]
+  [1m[36mTRANSACTION (24.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (62.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(2122188891063861270)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-03-28 15:29:33 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant HomeController):
+  
+Started GET "/" for 127.0.0.1 at 2023-03-28 15:29:34 +0300
+  
+ActionController::RoutingError (uninitialized constant HomeController):
+  
+Started GET "/" for 127.0.0.1 at 2023-03-28 15:32:29 +0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/william/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/william/.rbenv/versions/3.2.1/lib/ruby/gems/3.2.0/gems/railties-7.0.4.3/lib/rails/templates/rails/welcome/index.html.erb (Duration: 27.4ms | Allocations: 271)
+Completed 200 OK in 119ms (Views: 35.6ms | ActiveRecord: 0.0ms | Allocations: 2039)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-03-28 15:35:16 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/users/index" for 127.0.0.1 at 2023-03-28 15:35:36 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/index"):
+  
