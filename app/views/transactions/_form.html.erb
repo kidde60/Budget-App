@@ -21,6 +21,13 @@
     <%= form.text_field :amount %>
   </div>
 
+   <div class="input_wrapper">
+      <%= form.label :category, class: 'form-label' %>
+      <%= select_tag :category, options_for_select(@categories.map { |category| [category.name, category.id] }), 
+      {prompt: 'Select Category', required: true, 
+       class: 'select_tag'} %>
+    </div>
+
   <div>
     <%= form.submit %>
   </div>
