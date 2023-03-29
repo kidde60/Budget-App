@@ -13,16 +13,15 @@ class TransactionsController < ApplicationController
   def new
     @transaction = Transaction.new
     @categories = Category.where(author: current_user)
-
   end
 
   # GET /transactions/1/edit
   def edit; end
 
   # POST /transactions or /transactions.json
- 
+
   def create
-      @transaction = Transaction.new(transaction_params)
+    @transaction = Transaction.new(transaction_params)
     @transaction.author = current_user
     return unless @transaction.save
 
