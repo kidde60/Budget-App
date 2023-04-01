@@ -1,0 +1,33 @@
+<p style="color: green"><%= notice %></p>
+
+  <%= link_to "Back to categories", categories_path %>
+<%= render @category%>
+
+<div>
+<ul class="transaction-container">
+    <% @category_expense.each do |cat_exp| %>
+      <li class="transaction-list">
+        <div class="date_and_time-container">
+          <p class="date"><%= cat_exp.created_at %></p>
+        
+        </div>
+        <div class="transaction-info">
+          <p class="transaction-name"><%= cat_exp.expense.name %></p>
+          <p class="transaction-time"><i class="fa-regular fa-clock"></i></p>
+        </div>
+        <p class="transaction-amt">$<%= cat_exp.expense.amount %></p>
+      </li>
+    <% end %>
+  </ul>
+  <div class="total-amount--wrapper">
+    <p class="text">Total Amount</p>
+    <p class="amount">$<%= @total_amt %></p>
+  </div>
+</div>
+
+
+</div>
+
+<div class='add-expense'>
+<%= link_to "Add expense", new_category_expense_path(@category.id) %>
+</div>

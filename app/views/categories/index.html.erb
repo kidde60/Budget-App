@@ -1,0 +1,24 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>ALL CARTEGORIES</h1>
+
+<div id="categories">
+<% if @categories.empty?%>
+<p> No Category Availble</p>
+<%else%>
+<ul>
+  <% @categories.each do |category| %>   
+    <li>
+          <%= link_to category_path(category.id), class:"container-list" do %>
+            <% @total = 0 %>
+            <% category.category_expenses.each { |e| @total += e.expense.amount } %>
+            <%= render category %>
+            <p class="category-amount">$<%= @total%></p>
+          <% end %>
+        </li>
+  <% end %>
+  </ul>
+<%end%>
+</div>
+
+<%= link_to "New category", new_category_path %>
