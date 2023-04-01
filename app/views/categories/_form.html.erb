@@ -12,13 +12,13 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.label :name, class:"form-label" %>
+    <%= form.text_field :name, class:"form-control" %>
   </div>
 
   <div>
-    <%= form.label :icon, style: "display: block" %>
-    <ul class="icon-container">
+    <%= form.label :icon, class:"form-label"%>
+    <ul class="list-unstyled d-flex flex-row justify-content-start gap-3 flex-wrap ">
       <% @icons.each do |icon| %>
         <li class="icon-list">
           <label class='icon-label'>
@@ -31,6 +31,6 @@
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class:'btn btn-primary' %>
   </div>
 <% end %>
