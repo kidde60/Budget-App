@@ -32,9 +32,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Recipe-app] <a name="about-project"></a>
+# 📖 [Budget-app] <a name="about-project"></a>
 
-**[Recipe-app]** is a recipe web application. User can create accounts, recipe and foods can see public_recipes and can generate shopping list. Built with ruby on rails.
+**[Buddet-app]** This is a budget app where a user can add ctegories, add expenses and be able to see the total expenses. Built with ruby on rails.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -80,7 +80,8 @@
 
 - [video Demo Link](https://drive.google.com/file/d/1PvQS1GWWVOGuwvLx-HuTP2LO4iqnaVyf/view?usp=share_link)
 
-- https://budget-app-render.onrender.com
+- [Live demo link](https://budget-app-render.onrender.com)
+
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
