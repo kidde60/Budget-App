@@ -9,10 +9,13 @@
 <ul>
   <% @categories.each do |category| %>   
     <li>
-      <%= link_to  category do%>
-     <%= render category %>
-      <%end%>
-    </li>
+          <%= link_to category_path(category.id), class:"container-list" do %>
+            <% @total = 0 %>
+            <% category.category_expenses.each { |e| @total += e.expense.amount } %>
+            <%= render category %>
+            <p class="category-amount">$<%= @total%></p>
+          <% end %>
+        </li>
   <% end %>
   </ul>
 <%end%>

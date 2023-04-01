@@ -18,7 +18,16 @@
 
   <div>
     <%= form.label :icon, style: "display: block" %>
-    <%= form.text_field :icon %>
+    <ul class="icon-container">
+      <% @icons.each do |icon| %>
+        <li class="icon-list">
+          <label class='icon-label'>
+            <%= form.radio_button :icon, "icons/#{icon}", autofocus: true, required: true %>
+            <%= image_tag "icons/#{icon}", class: 'icon-img' %>
+          </label>
+        </li>
+      <% end %>
+    </ul>
   </div>
 
   <div>
