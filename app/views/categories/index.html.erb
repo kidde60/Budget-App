@@ -1,24 +1,28 @@
-<p style="color: green"><%= notice %></p>
+<%= render 'navbar/new'%>
 
-<h1>ALL CARTEGORIES</h1>
+<p style="color: green"><%= notice %></p>
+<div class='container'>
+<h1 class='text-center text-primary'>ALL CARTEGORIES</h1>
 
 <div id="categories">
 <% if @categories.empty?%>
 <p> No Category Availble</p>
 <%else%>
-<ul>
+<ul class='list-unstyled'>
   <% @categories.each do |category| %>   
     <li>
-          <%= link_to category_path(category.id), class:"container-list" do %>
+          <%= link_to category_path(category.id), class:'d-flex flex-row justify-content-between border border-primary rounded px-4 my-2' do %>
             <% @total = 0 %>
             <% category.category_expenses.each { |e| @total += e.expense.amount } %>
             <%= render category %>
-            <p class="category-amount">$<%= @total%></p>
+            <h2 class="category-amount">$<%= @total%></h2>
           <% end %>
         </li>
   <% end %>
   </ul>
 <%end%>
 </div>
-
-<%= link_to "New category", new_category_path %>
+<footer class="footer">
+<%= link_to "Add New Category", new_category_path, class: "footer-btn btn form-control text-white" %>
+</footer>
+</div>

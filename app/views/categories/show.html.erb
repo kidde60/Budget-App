@@ -1,33 +1,33 @@
+<%= render'navbar/new'%>
+
 <p style="color: green"><%= notice %></p>
 
-  <%= link_to "Back to categories", categories_path %>
-<%= render @category%>
+  <%= link_to 'Back', categories_path %>
 
-<div>
-<ul class="transaction-container">
-    <% @category_expense.each do |cat_exp| %>
-      <li class="transaction-list">
-        <div class="date_and_time-container">
-          <p class="date"><%= cat_exp.created_at %></p>
+<div class='container'>
+<%= render @category%>
+ <ul class='list-unstyled'>
+    <% @category_expense.each do |catexp| %>
+      <li class="border border-primary rounded px-4 py-2 my-2">
+        <div>
+          <strong>Name: <%= catexp.expense.name %></strong>
+        </div>
+        
+        <div>
+          <strong>Created at: <%= catexp.created_at %></strong>
         
         </div>
-        <div class="transaction-info">
-          <p class="transaction-name"><%= cat_exp.expense.name %></p>
-          <p class="transaction-time"><i class="fa-regular fa-clock"></i></p>
-        </div>
-        <p class="transaction-amt">$<%= cat_exp.expense.amount %></p>
+        
+        <strong>Amount: $<%= catexp.expense.amount %></strong>
       </li>
     <% end %>
   </ul>
-  <div class="total-amount--wrapper">
-    <p class="text">Total Amount</p>
-    <p class="amount">$<%= @total_amt %></p>
+  <div class="d-flex justify-content-between">
+    <h1>Total Amount:</h1>
+    <h1>$<%= @total_amt %></h1>
   </div>
 </div>
 
-
-</div>
-
-<div class='add-expense'>
-<%= link_to "Add expense", new_category_expense_path(@category.id) %>
+<div class='footer'>
+<%= link_to "Add Expense", new_category_expense_path(@category.id), class: "footer-btn btn form-control text-white"%>
 </div>
