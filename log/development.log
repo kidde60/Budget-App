@@ -7950,3 +7950,31 @@ Processing by CategoriesController#index as HTML
 Completed 200 OK in 51ms (Views: 37.8ms | ActiveRecord: 4.3ms | Allocations: 10747)
 
 
+Started GET "/" for ::1 at 2023-04-01 16:45:01 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (58.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (48.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 1.9ms | Allocations: 449)
+  [1m[36mCategory Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 1], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 1]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (114.0ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" IN ($1, $2)[0m  [["category_id", 2], ["category_id", 1]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mExpense Load (4.8ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:16
+  Rendered categories/_category.html.erb (Duration: 238.7ms | Allocations: 34154)
+  [1m[36mExpense Load (1.0ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:16
+  [1m[36mExpense Load (0.6ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:16
+  [1m[36mExpense Load (0.6ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:16
+  Rendered categories/_category.html.erb (Duration: 2.6ms | Allocations: 476)
+  Rendered categories/index.html.erb within layouts/application (Duration: 468.0ms | Allocations: 55591)
+  Rendered layout layouts/application.html.erb (Duration: 498.5ms | Allocations: 68639)
+Completed 200 OK in 659ms (Views: 363.9ms | ActiveRecord: 226.1ms | Allocations: 83634)
+
+
