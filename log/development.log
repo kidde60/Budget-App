@@ -7978,3 +7978,2330 @@ Processing by CategoriesController#index as HTML
 Completed 200 OK in 659ms (Views: 363.9ms | ActiveRecord: 226.1ms | Allocations: 83634)
 
 
+Started GET "/" for ::1 at 2023-04-01 17:33:52 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 0.5ms | Allocations: 147)
+  [1m[36mCategory Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 1], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 1]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (1.0ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" IN ($1, $2)[0m  [["category_id", 2], ["category_id", 1]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mExpense Load (0.6ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:16
+  Rendered categories/_category.html.erb (Duration: 2.0ms | Allocations: 643)
+  [1m[36mExpense Load (0.5ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:16
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:16
+  [1m[36mExpense Load (0.5ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:16
+  Rendered categories/_category.html.erb (Duration: 2.0ms | Allocations: 471)
+  Rendered categories/index.html.erb within layouts/application (Duration: 57.9ms | Allocations: 15576)
+  Rendered layout layouts/application.html.erb (Duration: 82.6ms | Allocations: 28110)
+Completed 200 OK in 124ms (Views: 79.7ms | ActiveRecord: 15.4ms | Allocations: 37897)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2023-04-01 17:34:50 +0300
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://[::1]:3000/
+Completed 303 See Other in 45ms (ActiveRecord: 0.6ms | Allocations: 4000)
+
+
+Started GET "/" for ::1 at 2023-04-01 17:34:50 +0300
+Processing by CategoriesController#index as TURBO_STREAM
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms | Allocations: 375)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-01 17:34:50 +0300
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 0.6ms | Allocations: 123)
+  Rendered devise/shared/_links.html.erb (Duration: 1.9ms | Allocations: 660)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 11.9ms | Allocations: 3319)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | Allocations: 5515)
+Completed 200 OK in 23ms (Views: 20.3ms | ActiveRecord: 0.0ms | Allocations: 6801)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-01 17:34:55 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 0.6ms | Allocations: 98)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1439)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 3545)
+Completed 200 OK in 17ms (Views: 15.2ms | ActiveRecord: 0.0ms | Allocations: 4153)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-04-01 17:37:24 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 16.7ms | Allocations: 219)
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 140)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 35.4ms | Allocations: 2500)
+  Rendered layout layouts/application.html.erb (Duration: 43.1ms | Allocations: 4689)
+Completed 200 OK in 50ms (Views: 46.5ms | ActiveRecord: 0.0ms | Allocations: 5762)
+
+
+Started POST "/users" for ::1 at 2023-04-01 17:37:45 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"moses", "email"=>"moses@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :name. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007efc4d9c8678>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"moses", "email"=>"moses@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (24.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "moses@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 8.4ms | Allocations: 1431)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 29.2ms | Allocations: 4598)
+  Rendered layout layouts/application.html.erb (Duration: 36.2ms | Allocations: 6704)
+Completed 422 Unprocessable Entity in 496ms (Views: 37.6ms | ActiveRecord: 26.0ms | Allocations: 14689)
+
+
+Started POST "/users" for ::1 at 2023-04-01 17:38:36 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Racheal", "email"=>"racheal@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameter: :name. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007efc4e36abe0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Racheal", "email"=>"racheal@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "racheal@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 8.9ms | Allocations: 1225)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 23.9ms | Allocations: 4380)
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | Allocations: 6487)
+Completed 422 Unprocessable Entity in 423ms (Views: 31.1ms | ActiveRecord: 3.3ms | Allocations: 12918)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-01 17:40:51 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 0.7ms | Allocations: 145)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 150)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1598)
+  Rendered layout layouts/application.html.erb (Duration: 26.0ms | Allocations: 14387)
+Completed 200 OK in 46ms (Views: 28.2ms | ActiveRecord: 8.4ms | Allocations: 17998)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-04-01 17:40:53 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 99)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 1631)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 3811)
+Completed 200 OK in 23ms (Views: 19.7ms | ActiveRecord: 0.0ms | Allocations: 4765)
+
+
+Started POST "/users" for ::1 at 2023-04-01 17:41:15 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"Racheal", "email"=>"racheal@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "racheal@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (84.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Racheal"], ["created_at", "2023-04-01 14:41:15.950100"], ["updated_at", "2023-04-01 14:41:15.950100"], ["email", "racheal@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (14.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://[::1]:3000/
+Completed 303 See Other in 467ms (ActiveRecord: 100.2ms | Allocations: 7600)
+
+
+Started GET "/" for ::1 at 2023-04-01 17:41:16 +0300
+Processing by CategoriesController#index as TURBO_STREAM
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 0.7ms | Allocations: 142)
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 2], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  Rendered categories/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 967)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 3173)
+Completed 200 OK in 34ms (Views: 13.3ms | ActiveRecord: 3.5ms | Allocations: 7628)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2023-04-01 17:41:23 +0300
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://[::1]:3000/users/sign_in
+Completed 303 See Other in 11ms (ActiveRecord: 1.0ms | Allocations: 2024)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-01 17:41:23 +0300
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 0.7ms | Allocations: 99)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1445)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 3551)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 4154)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-04-01 17:42:30 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1524)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 3630)
+Completed 200 OK in 20ms (Views: 17.7ms | ActiveRecord: 0.0ms | Allocations: 4216)
+
+
+Started POST "/users" for ::1 at 2023-04-01 17:43:02 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"", "email"=>"william@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "william@gmail.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.9ms | Allocations: 461)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 15.2ms | Allocations: 2555)
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 4677)
+Completed 422 Unprocessable Entity in 428ms (Views: 25.6ms | ActiveRecord: 1.4ms | Allocations: 9808)
+
+
+Started POST "/users" for ::1 at 2023-04-01 17:43:25 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"William", "email"=>"william@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "william@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "William"], ["created_at", "2023-04-01 14:43:25.449799"], ["updated_at", "2023-04-01 14:43:25.449799"], ["email", "william@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (23.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://[::1]:3000/
+Completed 303 See Other in 413ms (ActiveRecord: 25.9ms | Allocations: 5965)
+
+
+Started GET "/" for ::1 at 2023-04-01 17:43:25 +0300
+Processing by CategoriesController#index as TURBO_STREAM
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 0.6ms | Allocations: 110)
+  [1m[36mCategory Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  Rendered categories/index.html.erb within layouts/application (Duration: 5.2ms | Allocations: 805)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 2932)
+Completed 200 OK in 28ms (Views: 15.0ms | ActiveRecord: 1.7ms | Allocations: 4683)
+
+
+Started GET "/categories/new" for ::1 at 2023-04-01 17:43:43 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 85.3ms | Allocations: 14692)
+  Rendered categories/new.html.erb within layouts/application (Duration: 100.9ms | Allocations: 14995)
+  Rendered layout layouts/application.html.erb (Duration: 110.1ms | Allocations: 17011)
+Completed 200 OK in 131ms (Views: 111.6ms | ActiveRecord: 4.5ms | Allocations: 20076)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 17:44:06 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"Delivery", "icon"=>"icons/delivery.jpeg"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Delivery"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Create (164.3ms)[0m  [1m[32mINSERT INTO "categories" ("author_id", "name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["author_id", 3], ["name", "Delivery"], ["icon", "icons/delivery.jpeg"], ["created_at", "2023-04-01 14:44:06.031076"], ["updated_at", "2023-04-01 14:44:06.031076"]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (29.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+Redirected to http://[::1]:3000/categories
+Completed 302 Found in 226ms (ActiveRecord: 196.1ms | Allocations: 4896)
+
+
+Started GET "/categories" for ::1 at 2023-04-01 17:44:06 +0300
+Processing by CategoriesController#index as TURBO_STREAM
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 0.5ms | Allocations: 110)
+  [1m[36mCategory Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (0.8ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  Rendered categories/_category.html.erb (Duration: 3.1ms | Allocations: 600)
+  Rendered categories/index.html.erb within layouts/application (Duration: 33.5ms | Allocations: 5128)
+  Rendered layout layouts/application.html.erb (Duration: 39.9ms | Allocations: 7145)
+Completed 200 OK in 50ms (Views: 34.9ms | ActiveRecord: 7.2ms | Allocations: 8867)
+
+
+Started GET "/categories/new" for ::1 at 2023-04-01 17:44:12 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 32.6ms | Allocations: 7004)
+  Rendered categories/new.html.erb within layouts/application (Duration: 33.5ms | Allocations: 7103)
+  Rendered layout layouts/application.html.erb (Duration: 39.3ms | Allocations: 9119)
+Completed 200 OK in 51ms (Views: 40.6ms | ActiveRecord: 0.8ms | Allocations: 10802)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 17:44:18 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"education", "icon"=>"icons/education.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "education"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 9.6ms | Allocations: 2491)
+  Rendered categories/new.html.erb within layouts/application (Duration: 10.7ms | Allocations: 2590)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 2677)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 2.4ms | Allocations: 7034)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    19:   <div>
+    20:     <%= form.label :icon, class:"form-label"%>
+    21:     <ul class="list-unstyled d-flex flex-row justify-content-start gap-3 flex-wrap ">
+    22:       <% @icons.each do |icon| %>
+    23:         <li class="icon-list">
+    24:           <label class='icon-label'>
+    25:             <%= form.radio_button :icon, "icons/#{icon}", autofocus: true, required: true %>
+  
+app/views/categories/_form.html.erb:22
+app/views/categories/_form.html.erb:1
+app/views/categories/new.html.erb:6
+app/controllers/categories_controller.rb:35:in `block (2 levels) in create'
+app/controllers/categories_controller.rb:30:in `create'
+Started GET "/categories/new" for ::1 at 2023-04-01 17:44:30 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 34.5ms | Allocations: 7055)
+  Rendered categories/new.html.erb within layouts/application (Duration: 35.9ms | Allocations: 7154)
+  Rendered layout layouts/application.html.erb (Duration: 49.5ms | Allocations: 9185)
+Completed 200 OK in 61ms (Views: 51.3ms | ActiveRecord: 0.8ms | Allocations: 10868)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 17:44:37 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"education", "icon"=>"icons/education.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "education"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 5.4ms | Allocations: 2440)
+  Rendered categories/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2537)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 2624)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 3.7ms | Allocations: 6957)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    19:   <div>
+    20:     <%= form.label :icon, class:"form-label"%>
+    21:     <ul class="list-unstyled d-flex flex-row justify-content-start gap-3 flex-wrap ">
+    22:       <% @icons.each do |icon| %>
+    23:         <li class="icon-list">
+    24:           <label class='icon-label'>
+    25:             <%= form.radio_button :icon, "icons/#{icon}", autofocus: true, required: true %>
+  
+app/views/categories/_form.html.erb:22
+app/views/categories/_form.html.erb:1
+app/views/categories/new.html.erb:6
+app/controllers/categories_controller.rb:35:in `block (2 levels) in create'
+app/controllers/categories_controller.rb:30:in `create'
+Started GET "/categories" for ::1 at 2023-04-01 17:44:49 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 0.6ms | Allocations: 110)
+  [1m[36mCategory Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (1.3ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  Rendered categories/_category.html.erb (Duration: 4.1ms | Allocations: 598)
+  Rendered categories/index.html.erb within layouts/application (Duration: 24.8ms | Allocations: 3056)
+  Rendered layout layouts/application.html.erb (Duration: 43.0ms | Allocations: 5087)
+Completed 200 OK in 59ms (Views: 41.6ms | ActiveRecord: 4.4ms | Allocations: 6809)
+
+
+Started GET "/categories" for ::1 at 2023-04-01 17:44:49 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 0.5ms | Allocations: 110)
+  [1m[36mCategory Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (0.6ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" = $1[0m  [["category_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  Rendered categories/_category.html.erb (Duration: 2.2ms | Allocations: 591)
+  Rendered categories/index.html.erb within layouts/application (Duration: 21.5ms | Allocations: 3046)
+  Rendered layout layouts/application.html.erb (Duration: 33.3ms | Allocations: 5062)
+Completed 200 OK in 43ms (Views: 32.8ms | ActiveRecord: 2.4ms | Allocations: 6767)
+
+
+Started GET "/categories/new" for ::1 at 2023-04-01 17:44:53 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 18.7ms | Allocations: 7048)
+  Rendered categories/new.html.erb within layouts/application (Duration: 19.9ms | Allocations: 7147)
+  Rendered layout layouts/application.html.erb (Duration: 26.7ms | Allocations: 9163)
+Completed 200 OK in 38ms (Views: 28.5ms | ActiveRecord: 0.5ms | Allocations: 10855)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 17:44:59 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"rent", "icon"=>"icons/software.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (3.7ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "rent"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Create (1.4ms)[0m  [1m[32mINSERT INTO "categories" ("author_id", "name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["author_id", 3], ["name", "rent"], ["icon", "icons/software.png"], ["created_at", "2023-04-01 14:44:59.439006"], ["updated_at", "2023-04-01 14:44:59.439006"]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (296.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+Redirected to http://[::1]:3000/categories
+Completed 302 Found in 329ms (ActiveRecord: 302.6ms | Allocations: 4551)
+
+
+Started GET "/categories" for ::1 at 2023-04-01 17:44:59 +0300
+Processing by CategoriesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 0.6ms | Allocations: 110)
+  [1m[36mCategory Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (1.1ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" IN ($1, $2)[0m  [["category_id", 4], ["category_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  Rendered categories/_category.html.erb (Duration: 2.7ms | Allocations: 591)
+  Rendered categories/_category.html.erb (Duration: 2.2ms | Allocations: 471)
+  Rendered categories/index.html.erb within layouts/application (Duration: 21.9ms | Allocations: 3697)
+  Rendered layout layouts/application.html.erb (Duration: 29.7ms | Allocations: 5713)
+Completed 200 OK in 41ms (Views: 29.1ms | ActiveRecord: 3.1ms | Allocations: 7467)
+
+
+Started GET "/categories/new" for ::1 at 2023-04-01 17:45:09 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 28.8ms | Allocations: 7004)
+  Rendered categories/new.html.erb within layouts/application (Duration: 29.6ms | Allocations: 7103)
+  Rendered layout layouts/application.html.erb (Duration: 38.7ms | Allocations: 9128)
+Completed 200 OK in 50ms (Views: 40.0ms | ActiveRecord: 0.5ms | Allocations: 10797)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 17:45:17 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"rent", "icon"=>"icons/trading.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "rent"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 10.0ms | Allocations: 2438)
+  Rendered categories/new.html.erb within layouts/application (Duration: 11.0ms | Allocations: 2535)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 2622)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 3.9ms | Allocations: 6947)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    19:   <div>
+    20:     <%= form.label :icon, class:"form-label"%>
+    21:     <ul class="list-unstyled d-flex flex-row justify-content-start gap-3 flex-wrap ">
+    22:       <% @icons.each do |icon| %>
+    23:         <li class="icon-list">
+    24:           <label class='icon-label'>
+    25:             <%= form.radio_button :icon, "icons/#{icon}", autofocus: true, required: true %>
+  
+app/views/categories/_form.html.erb:22
+app/views/categories/_form.html.erb:1
+app/views/categories/new.html.erb:6
+app/controllers/categories_controller.rb:35:in `block (2 levels) in create'
+app/controllers/categories_controller.rb:30:in `create'
+Started GET "/categories" for ::1 at 2023-04-01 17:45:25 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 0.5ms | Allocations: 110)
+  [1m[36mCategory Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (0.9ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" IN ($1, $2)[0m  [["category_id", 4], ["category_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  Rendered categories/_category.html.erb (Duration: 2.8ms | Allocations: 602)
+  Rendered categories/_category.html.erb (Duration: 2.9ms | Allocations: 477)
+  Rendered categories/index.html.erb within layouts/application (Duration: 24.1ms | Allocations: 3709)
+  Rendered layout layouts/application.html.erb (Duration: 32.7ms | Allocations: 5757)
+Completed 200 OK in 46ms (Views: 30.8ms | ActiveRecord: 3.9ms | Allocations: 7470)
+
+
+Started GET "/categories" for ::1 at 2023-04-01 17:45:25 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 0.6ms | Allocations: 110)
+  [1m[36mCategory Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (1.3ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" IN ($1, $2)[0m  [["category_id", 4], ["category_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  Rendered categories/_category.html.erb (Duration: 4.8ms | Allocations: 591)
+  Rendered categories/_category.html.erb (Duration: 3.5ms | Allocations: 471)
+  Rendered categories/index.html.erb within layouts/application (Duration: 26.5ms | Allocations: 3692)
+  Rendered layout layouts/application.html.erb (Duration: 36.6ms | Allocations: 5708)
+Completed 200 OK in 49ms (Views: 35.2ms | ActiveRecord: 3.8ms | Allocations: 7431)
+
+
+Started GET "/categories/new" for ::1 at 2023-04-01 17:45:31 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 27.1ms | Allocations: 7064)
+  Rendered categories/new.html.erb within layouts/application (Duration: 27.9ms | Allocations: 7163)
+  Rendered layout layouts/application.html.erb (Duration: 32.6ms | Allocations: 9179)
+Completed 200 OK in 45ms (Views: 33.7ms | ActiveRecord: 1.7ms | Allocations: 10862)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 17:45:36 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"education", "icon"=>"icons/education.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "education"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 8.0ms | Allocations: 2438)
+  Rendered categories/new.html.erb within layouts/application (Duration: 9.2ms | Allocations: 2535)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 2622)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 2.2ms | Allocations: 6964)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    19:   <div>
+    20:     <%= form.label :icon, class:"form-label"%>
+    21:     <ul class="list-unstyled d-flex flex-row justify-content-start gap-3 flex-wrap ">
+    22:       <% @icons.each do |icon| %>
+    23:         <li class="icon-list">
+    24:           <label class='icon-label'>
+    25:             <%= form.radio_button :icon, "icons/#{icon}", autofocus: true, required: true %>
+  
+app/views/categories/_form.html.erb:22
+app/views/categories/_form.html.erb:1
+app/views/categories/new.html.erb:6
+app/controllers/categories_controller.rb:35:in `block (2 levels) in create'
+app/controllers/categories_controller.rb:30:in `create'
+Started GET "/categories/new" for ::1 at 2023-04-01 17:46:25 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 28.1ms | Allocations: 7081)
+  Rendered categories/new.html.erb within layouts/application (Duration: 28.9ms | Allocations: 7180)
+  Rendered layout layouts/application.html.erb (Duration: 36.1ms | Allocations: 9228)
+Completed 200 OK in 47ms (Views: 37.3ms | ActiveRecord: 0.6ms | Allocations: 10930)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 17:46:30 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"education", "icon"=>"icons/web.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "education"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 8.8ms | Allocations: 2438)
+  Rendered categories/new.html.erb within layouts/application (Duration: 10.2ms | Allocations: 2535)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 2622)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 2.1ms | Allocations: 6951)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    19:   <div>
+    20:     <%= form.label :icon, class:"form-label"%>
+    21:     <ul class="list-unstyled d-flex flex-row justify-content-start gap-3 flex-wrap ">
+    22:       <% @icons.each do |icon| %>
+    23:         <li class="icon-list">
+    24:           <label class='icon-label'>
+    25:             <%= form.radio_button :icon, "icons/#{icon}", autofocus: true, required: true %>
+  
+app/views/categories/_form.html.erb:22
+app/views/categories/_form.html.erb:1
+app/views/categories/new.html.erb:6
+app/controllers/categories_controller.rb:35:in `block (2 levels) in create'
+app/controllers/categories_controller.rb:30:in `create'
+Started GET "/categories/new" for ::1 at 2023-04-01 17:46:37 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 28.8ms | Allocations: 7081)
+  Rendered categories/new.html.erb within layouts/application (Duration: 29.6ms | Allocations: 7180)
+  Rendered layout layouts/application.html.erb (Duration: 37.2ms | Allocations: 9228)
+Completed 200 OK in 48ms (Views: 38.4ms | ActiveRecord: 0.4ms | Allocations: 10918)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 17:46:50 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"education", "icon"=>"icons/trading.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "education"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 8.8ms | Allocations: 2438)
+  Rendered categories/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 2535)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 2622)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 1.9ms | Allocations: 6943)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    19:   <div>
+    20:     <%= form.label :icon, class:"form-label"%>
+    21:     <ul class="list-unstyled d-flex flex-row justify-content-start gap-3 flex-wrap ">
+    22:       <% @icons.each do |icon| %>
+    23:         <li class="icon-list">
+    24:           <label class='icon-label'>
+    25:             <%= form.radio_button :icon, "icons/#{icon}", autofocus: true, required: true %>
+  
+app/views/categories/_form.html.erb:22
+app/views/categories/_form.html.erb:1
+app/views/categories/new.html.erb:6
+app/controllers/categories_controller.rb:35:in `block (2 levels) in create'
+app/controllers/categories_controller.rb:30:in `create'
+Started GET "/categories/new" for ::1 at 2023-04-01 17:47:22 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 27.8ms | Allocations: 7081)
+  Rendered categories/new.html.erb within layouts/application (Duration: 29.0ms | Allocations: 7180)
+  Rendered layout layouts/application.html.erb (Duration: 37.1ms | Allocations: 9228)
+Completed 200 OK in 47ms (Views: 38.2ms | ActiveRecord: 0.4ms | Allocations: 10909)
+
+
+Started GET "/categories" for ::1 at 2023-04-01 17:47:25 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 0.8ms | Allocations: 110)
+  [1m[36mCategory Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (0.9ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" IN ($1, $2)[0m  [["category_id", 4], ["category_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  Rendered categories/_category.html.erb (Duration: 2.4ms | Allocations: 591)
+  Rendered categories/_category.html.erb (Duration: 1.9ms | Allocations: 471)
+  Rendered categories/index.html.erb within layouts/application (Duration: 21.7ms | Allocations: 3692)
+  Rendered layout layouts/application.html.erb (Duration: 28.8ms | Allocations: 5708)
+Completed 200 OK in 39ms (Views: 27.8ms | ActiveRecord: 2.7ms | Allocations: 7430)
+
+
+Started GET "/categories/4" for ::1 at 2023-04-01 17:47:31 +0300
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:68:in `set_category'
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:11:in `show'
+  [1m[36mCategoryExpense Load (0.7ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" = $1 ORDER BY "category_expenses"."created_at" DESC[0m  [["category_id", 4]]
+  ↳ app/controllers/categories_controller.rb:13:in `reduce'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 0.6ms | Allocations: 119)
+  Rendered categories/_category.html.erb (Duration: 2.5ms | Allocations: 591)
+  Rendered categories/show.html.erb within layouts/application (Duration: 10.0ms | Allocations: 1253)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 3261)
+Completed 200 OK in 41ms (Views: 18.8ms | ActiveRecord: 1.8ms | Allocations: 7588)
+
+
+Started GET "/categories" for ::1 at 2023-04-01 17:47:36 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 0.9ms | Allocations: 110)
+  [1m[36mCategory Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (0.7ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" IN ($1, $2)[0m  [["category_id", 4], ["category_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  Rendered categories/_category.html.erb (Duration: 3.1ms | Allocations: 591)
+  Rendered categories/_category.html.erb (Duration: 2.4ms | Allocations: 471)
+  Rendered categories/index.html.erb within layouts/application (Duration: 24.4ms | Allocations: 3692)
+  Rendered layout layouts/application.html.erb (Duration: 32.1ms | Allocations: 5708)
+Completed 200 OK in 47ms (Views: 31.7ms | ActiveRecord: 2.7ms | Allocations: 7424)
+
+
+Started GET "/categories/new" for ::1 at 2023-04-01 17:47:38 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 40.8ms | Allocations: 7028)
+  Rendered categories/new.html.erb within layouts/application (Duration: 41.7ms | Allocations: 7127)
+  Rendered layout layouts/application.html.erb (Duration: 50.3ms | Allocations: 9175)
+Completed 200 OK in 62ms (Views: 52.0ms | ActiveRecord: 0.5ms | Allocations: 10862)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 17:47:48 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"education", "icon"=>"icons/education.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "education"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 9.8ms | Allocations: 2438)
+  Rendered categories/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 2535)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 2622)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 2.6ms | Allocations: 6955)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    19:   <div>
+    20:     <%= form.label :icon, class:"form-label"%>
+    21:     <ul class="list-unstyled d-flex flex-row justify-content-start gap-3 flex-wrap ">
+    22:       <% @icons.each do |icon| %>
+    23:         <li class="icon-list">
+    24:           <label class='icon-label'>
+    25:             <%= form.radio_button :icon, "icons/#{icon}", autofocus: true, required: true %>
+  
+app/views/categories/_form.html.erb:22
+app/views/categories/_form.html.erb:1
+app/views/categories/new.html.erb:6
+app/controllers/categories_controller.rb:35:in `block (2 levels) in create'
+app/controllers/categories_controller.rb:30:in `create'
+Started GET "/categories/new" for ::1 at 2023-04-01 17:49:32 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 30.7ms | Allocations: 7081)
+  Rendered categories/new.html.erb within layouts/application (Duration: 31.6ms | Allocations: 7180)
+  Rendered layout layouts/application.html.erb (Duration: 39.5ms | Allocations: 9228)
+Completed 200 OK in 53ms (Views: 41.0ms | ActiveRecord: 0.6ms | Allocations: 10915)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 17:49:38 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"boxing", "icon"=>"icons/web.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "boxing"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Create (1.3ms)[0m  [1m[32mINSERT INTO "categories" ("author_id", "name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["author_id", 3], ["name", "boxing"], ["icon", "icons/web.png"], ["created_at", "2023-04-01 14:49:38.468021"], ["updated_at", "2023-04-01 14:49:38.468021"]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (29.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+Redirected to http://[::1]:3000/categories
+Completed 302 Found in 59ms (ActiveRecord: 31.8ms | Allocations: 4573)
+
+
+Started GET "/categories" for ::1 at 2023-04-01 17:49:38 +0300
+Processing by CategoriesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 0.8ms | Allocations: 110)
+  [1m[36mCategory Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (0.8ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" IN ($1, $2, $3)[0m  [["category_id", 5], ["category_id", 4], ["category_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  Rendered categories/_category.html.erb (Duration: 3.4ms | Allocations: 589)
+  Rendered categories/_category.html.erb (Duration: 2.5ms | Allocations: 449)
+  Rendered categories/_category.html.erb (Duration: 2.1ms | Allocations: 471)
+  Rendered categories/index.html.erb within layouts/application (Duration: 28.1ms | Allocations: 4315)
+  Rendered layout layouts/application.html.erb (Duration: 36.8ms | Allocations: 6331)
+Completed 200 OK in 47ms (Views: 36.0ms | ActiveRecord: 2.7ms | Allocations: 8064)
+
+
+Started GET "/categories/new" for ::1 at 2023-04-01 17:49:45 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 27.5ms | Allocations: 7081)
+  Rendered categories/new.html.erb within layouts/application (Duration: 28.4ms | Allocations: 7180)
+  Rendered layout layouts/application.html.erb (Duration: 38.4ms | Allocations: 9228)
+Completed 200 OK in 49ms (Views: 39.6ms | ActiveRecord: 0.4ms | Allocations: 10934)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 17:49:58 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"boxing", "icon"=>"icons/delivery.jpeg"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "boxing"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 8.6ms | Allocations: 2438)
+  Rendered categories/new.html.erb within layouts/application (Duration: 9.6ms | Allocations: 2535)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 2622)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 2.1ms | Allocations: 6950)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    19:   <div>
+    20:     <%= form.label :icon, class:"form-label"%>
+    21:     <ul class="list-unstyled d-flex flex-row justify-content-start gap-3 flex-wrap ">
+    22:       <% @icons.each do |icon| %>
+    23:         <li class="icon-list">
+    24:           <label class='icon-label'>
+    25:             <%= form.radio_button :icon, "icons/#{icon}", autofocus: true, required: true %>
+  
+app/views/categories/_form.html.erb:22
+app/views/categories/_form.html.erb:1
+app/views/categories/new.html.erb:6
+app/controllers/categories_controller.rb:35:in `block (2 levels) in create'
+app/controllers/categories_controller.rb:30:in `create'
+Started GET "/categories/new" for ::1 at 2023-04-01 17:50:03 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 30.6ms | Allocations: 7081)
+  Rendered categories/new.html.erb within layouts/application (Duration: 31.6ms | Allocations: 7180)
+  Rendered layout layouts/application.html.erb (Duration: 42.8ms | Allocations: 9228)
+Completed 200 OK in 56ms (Views: 44.6ms | ActiveRecord: 0.5ms | Allocations: 10915)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 17:50:10 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"rent", "icon"=>"icons/education.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "rent"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 9.7ms | Allocations: 2438)
+  Rendered categories/new.html.erb within layouts/application (Duration: 10.7ms | Allocations: 2535)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 2622)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 2.2ms | Allocations: 6949)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    19:   <div>
+    20:     <%= form.label :icon, class:"form-label"%>
+    21:     <ul class="list-unstyled d-flex flex-row justify-content-start gap-3 flex-wrap ">
+    22:       <% @icons.each do |icon| %>
+    23:         <li class="icon-list">
+    24:           <label class='icon-label'>
+    25:             <%= form.radio_button :icon, "icons/#{icon}", autofocus: true, required: true %>
+  
+app/views/categories/_form.html.erb:22
+app/views/categories/_form.html.erb:1
+app/views/categories/new.html.erb:6
+app/controllers/categories_controller.rb:35:in `block (2 levels) in create'
+app/controllers/categories_controller.rb:30:in `create'
+Started GET "/categories/new" for ::1 at 2023-04-01 17:50:22 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 51.3ms | Allocations: 7081)
+  Rendered categories/new.html.erb within layouts/application (Duration: 52.9ms | Allocations: 7180)
+  Rendered layout layouts/application.html.erb (Duration: 76.9ms | Allocations: 9228)
+Completed 200 OK in 92ms (Views: 78.7ms | ActiveRecord: 0.6ms | Allocations: 10917)
+
+
+Started GET "/categories" for ::1 at 2023-04-01 17:50:23 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 1.0ms | Allocations: 110)
+  [1m[36mCategory Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (0.9ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" IN ($1, $2, $3)[0m  [["category_id", 5], ["category_id", 4], ["category_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  Rendered categories/_category.html.erb (Duration: 3.3ms | Allocations: 594)
+  Rendered categories/_category.html.erb (Duration: 2.7ms | Allocations: 448)
+  Rendered categories/_category.html.erb (Duration: 2.7ms | Allocations: 473)
+  Rendered categories/index.html.erb within layouts/application (Duration: 33.6ms | Allocations: 4317)
+  Rendered layout layouts/application.html.erb (Duration: 44.6ms | Allocations: 6336)
+Completed 200 OK in 59ms (Views: 43.7ms | ActiveRecord: 3.0ms | Allocations: 8038)
+
+
+Started GET "/categories/new" for ::1 at 2023-04-01 17:50:29 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 56.0ms | Allocations: 7030)
+  Rendered categories/new.html.erb within layouts/application (Duration: 57.4ms | Allocations: 7129)
+  Rendered layout layouts/application.html.erb (Duration: 69.3ms | Allocations: 9145)
+Completed 200 OK in 94ms (Views: 73.1ms | ActiveRecord: 0.8ms | Allocations: 10826)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 17:50:36 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"education", "icon"=>"icons/education.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "education"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 13.7ms | Allocations: 2438)
+  Rendered categories/new.html.erb within layouts/application (Duration: 15.0ms | Allocations: 2535)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 2622)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 5.3ms | Allocations: 6961)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    19:   <div>
+    20:     <%= form.label :icon, class:"form-label"%>
+    21:     <ul class="list-unstyled d-flex flex-row justify-content-start gap-3 flex-wrap ">
+    22:       <% @icons.each do |icon| %>
+    23:         <li class="icon-list">
+    24:           <label class='icon-label'>
+    25:             <%= form.radio_button :icon, "icons/#{icon}", autofocus: true, required: true %>
+  
+app/views/categories/_form.html.erb:22
+app/views/categories/_form.html.erb:1
+app/views/categories/new.html.erb:6
+app/controllers/categories_controller.rb:35:in `block (2 levels) in create'
+app/controllers/categories_controller.rb:30:in `create'
+Started GET "/categories/new" for ::1 at 2023-04-01 17:50:47 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 49.8ms | Allocations: 7082)
+  Rendered categories/new.html.erb within layouts/application (Duration: 51.0ms | Allocations: 7181)
+  Rendered layout layouts/application.html.erb (Duration: 66.9ms | Allocations: 9229)
+Completed 200 OK in 85ms (Views: 68.7ms | ActiveRecord: 0.8ms | Allocations: 10925)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 17:50:54 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"education", "icon"=>"icons/trading.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "education"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 14.0ms | Allocations: 2438)
+  Rendered categories/new.html.erb within layouts/application (Duration: 15.7ms | Allocations: 2535)
+  Rendered layout layouts/application.html.erb (Duration: 16.7ms | Allocations: 2622)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 3.3ms | Allocations: 6952)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    19:   <div>
+    20:     <%= form.label :icon, class:"form-label"%>
+    21:     <ul class="list-unstyled d-flex flex-row justify-content-start gap-3 flex-wrap ">
+    22:       <% @icons.each do |icon| %>
+    23:         <li class="icon-list">
+    24:           <label class='icon-label'>
+    25:             <%= form.radio_button :icon, "icons/#{icon}", autofocus: true, required: true %>
+  
+app/views/categories/_form.html.erb:22
+app/views/categories/_form.html.erb:1
+app/views/categories/new.html.erb:6
+app/controllers/categories_controller.rb:35:in `block (2 levels) in create'
+app/controllers/categories_controller.rb:30:in `create'
+Started GET "/" for ::1 at 2023-04-01 17:51:09 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 0.6ms | Allocations: 110)
+  [1m[36mCategory Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (0.9ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" IN ($1, $2, $3)[0m  [["category_id", 5], ["category_id", 4], ["category_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  Rendered categories/_category.html.erb (Duration: 2.5ms | Allocations: 600)
+  Rendered categories/_category.html.erb (Duration: 2.0ms | Allocations: 452)
+  Rendered categories/_category.html.erb (Duration: 3.8ms | Allocations: 477)
+  Rendered categories/index.html.erb within layouts/application (Duration: 28.5ms | Allocations: 4331)
+  Rendered layout layouts/application.html.erb (Duration: 39.7ms | Allocations: 6379)
+Completed 200 OK in 51ms (Views: 38.7ms | ActiveRecord: 2.8ms | Allocations: 8093)
+
+
+Started GET "/categories/new" for ::1 at 2023-04-01 17:51:11 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 28.8ms | Allocations: 7058)
+  Rendered categories/new.html.erb within layouts/application (Duration: 30.0ms | Allocations: 7157)
+  Rendered layout layouts/application.html.erb (Duration: 40.4ms | Allocations: 9173)
+Completed 200 OK in 53ms (Views: 42.3ms | ActiveRecord: 0.6ms | Allocations: 10869)
+
+
+Started GET "/categories" for ::1 at 2023-04-01 17:51:18 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 0.8ms | Allocations: 110)
+  [1m[36mCategory Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (0.7ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" IN ($1, $2, $3)[0m  [["category_id", 5], ["category_id", 4], ["category_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  Rendered categories/_category.html.erb (Duration: 2.8ms | Allocations: 589)
+  Rendered categories/_category.html.erb (Duration: 2.1ms | Allocations: 446)
+  Rendered categories/_category.html.erb (Duration: 2.2ms | Allocations: 471)
+  Rendered categories/index.html.erb within layouts/application (Duration: 25.4ms | Allocations: 4308)
+  Rendered layout layouts/application.html.erb (Duration: 33.1ms | Allocations: 6324)
+Completed 200 OK in 43ms (Views: 32.2ms | ActiveRecord: 2.5ms | Allocations: 8031)
+
+
+Started GET "/categories/5" for ::1 at 2023-04-01 17:51:19 +0300
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:68:in `set_category'
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:11:in `show'
+  [1m[36mCategoryExpense Load (0.7ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" = $1 ORDER BY "category_expenses"."created_at" DESC[0m  [["category_id", 5]]
+  ↳ app/controllers/categories_controller.rb:13:in `reduce'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 0.9ms | Allocations: 119)
+  Rendered categories/_category.html.erb (Duration: 2.8ms | Allocations: 600)
+  Rendered categories/show.html.erb within layouts/application (Duration: 5.8ms | Allocations: 938)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 2978)
+Completed 200 OK in 40ms (Views: 15.7ms | ActiveRecord: 1.9ms | Allocations: 6226)
+
+
+Started GET "/categories" for ::1 at 2023-04-01 17:51:22 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 0.9ms | Allocations: 110)
+  [1m[36mCategory Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (0.9ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" IN ($1, $2, $3)[0m  [["category_id", 5], ["category_id", 4], ["category_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  Rendered categories/_category.html.erb (Duration: 2.7ms | Allocations: 595)
+  Rendered categories/_category.html.erb (Duration: 2.4ms | Allocations: 452)
+  Rendered categories/_category.html.erb (Duration: 2.2ms | Allocations: 477)
+  Rendered categories/index.html.erb within layouts/application (Duration: 29.4ms | Allocations: 4326)
+  Rendered layout layouts/application.html.erb (Duration: 38.6ms | Allocations: 6369)
+Completed 200 OK in 53ms (Views: 37.7ms | ActiveRecord: 4.2ms | Allocations: 8068)
+
+
+Started GET "/categories/new" for ::1 at 2023-04-01 17:51:26 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 37.5ms | Allocations: 7062)
+  Rendered categories/new.html.erb within layouts/application (Duration: 38.6ms | Allocations: 7161)
+  Rendered layout layouts/application.html.erb (Duration: 47.4ms | Allocations: 9182)
+Completed 200 OK in 62ms (Views: 49.2ms | ActiveRecord: 0.6ms | Allocations: 10864)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 17:51:34 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"delivery", "icon"=>"icons/saving.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "delivery"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 10.2ms | Allocations: 2438)
+  Rendered categories/new.html.erb within layouts/application (Duration: 11.1ms | Allocations: 2535)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 2622)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 2.1ms | Allocations: 6952)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    19:   <div>
+    20:     <%= form.label :icon, class:"form-label"%>
+    21:     <ul class="list-unstyled d-flex flex-row justify-content-start gap-3 flex-wrap ">
+    22:       <% @icons.each do |icon| %>
+    23:         <li class="icon-list">
+    24:           <label class='icon-label'>
+    25:             <%= form.radio_button :icon, "icons/#{icon}", autofocus: true, required: true %>
+  
+app/views/categories/_form.html.erb:22
+app/views/categories/_form.html.erb:1
+app/views/categories/new.html.erb:6
+app/controllers/categories_controller.rb:35:in `block (2 levels) in create'
+app/controllers/categories_controller.rb:30:in `create'
+Started POST "/__web_console/repl_sessions/41d145bb3d41777be8b5577caa9e4e05/trace" for ::1 at 2023-04-01 17:52:14 +0300
+Started POST "/__web_console/repl_sessions/41d145bb3d41777be8b5577caa9e4e05/trace" for ::1 at 2023-04-01 17:52:18 +0300
+Started POST "/__web_console/repl_sessions/41d145bb3d41777be8b5577caa9e4e05/trace" for ::1 at 2023-04-01 17:52:29 +0300
+Started GET "/categories/new" for ::1 at 2023-04-01 17:53:08 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 15.2ms | Allocations: 7197)
+  Rendered categories/new.html.erb within layouts/application (Duration: 15.8ms | Allocations: 7329)
+  Rendered layout layouts/application.html.erb (Duration: 35.2ms | Allocations: 20054)
+Completed 200 OK in 72ms (Views: 36.9ms | ActiveRecord: 10.8ms | Allocations: 28258)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 17:53:12 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"education", "icon"=>"icons/trading.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:29:in `create'
+  [1m[36mCategory Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "education"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:29:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/categories_controller.rb:29:in `create'
+No template found for CategoriesController#create, rendering head :no_content
+Completed 204 No Content in 20ms (ActiveRecord: 1.9ms | Allocations: 5078)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 17:53:17 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"education", "icon"=>"icons/trading.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:29:in `create'
+  [1m[36mCategory Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "education"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:29:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/categories_controller.rb:29:in `create'
+No template found for CategoriesController#create, rendering head :no_content
+Completed 204 No Content in 20ms (ActiveRecord: 1.7ms | Allocations: 4191)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 17:53:18 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"education", "icon"=>"icons/trading.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:29:in `create'
+  [1m[36mCategory Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "education"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:29:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/categories_controller.rb:29:in `create'
+No template found for CategoriesController#create, rendering head :no_content
+Completed 204 No Content in 18ms (ActiveRecord: 1.8ms | Allocations: 4176)
+
+
+Started GET "/categories/new" for ::1 at 2023-04-01 17:53:21 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 18.0ms | Allocations: 7004)
+  Rendered categories/new.html.erb within layouts/application (Duration: 18.6ms | Allocations: 7103)
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 9119)
+Completed 200 OK in 34ms (Views: 25.6ms | ActiveRecord: 0.5ms | Allocations: 10824)
+
+
+Started GET "/categories" for ::1 at 2023-04-01 17:53:22 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 0.4ms | Allocations: 121)
+  [1m[36mCategory Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (0.6ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" IN ($1, $2, $3)[0m  [["category_id", 5], ["category_id", 4], ["category_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  Rendered categories/_category.html.erb (Duration: 1.5ms | Allocations: 608)
+  Rendered categories/_category.html.erb (Duration: 1.4ms | Allocations: 452)
+  Rendered categories/_category.html.erb (Duration: 1.4ms | Allocations: 477)
+  Rendered categories/index.html.erb within layouts/application (Duration: 34.6ms | Allocations: 6428)
+  Rendered layout layouts/application.html.erb (Duration: 39.6ms | Allocations: 8477)
+Completed 200 OK in 49ms (Views: 36.5ms | ActiveRecord: 4.7ms | Allocations: 10245)
+
+
+Started GET "/categories/new" for ::1 at 2023-04-01 17:54:59 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 13.1ms | Allocations: 7197)
+  Rendered categories/new.html.erb within layouts/application (Duration: 15.2ms | Allocations: 7329)
+  Rendered layout layouts/application.html.erb (Duration: 32.4ms | Allocations: 20054)
+Completed 200 OK in 64ms (Views: 34.0ms | ActiveRecord: 8.1ms | Allocations: 28260)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 17:55:04 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"education", "icon"=>"icons/trading.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:41:in `create'
+  [1m[36mCategory Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "education"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:41:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/categories_controller.rb:41:in `create'
+No template found for CategoriesController#create, rendering head :no_content
+Completed 204 No Content in 18ms (ActiveRecord: 1.7ms | Allocations: 4891)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 17:55:06 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"education", "icon"=>"icons/trading.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:41:in `create'
+  [1m[36mCategory Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "education"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:41:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/categories_controller.rb:41:in `create'
+No template found for CategoriesController#create, rendering head :no_content
+Completed 204 No Content in 16ms (ActiveRecord: 1.7ms | Allocations: 4188)
+
+
+Started GET "/categories" for ::1 at 2023-04-01 17:55:49 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 1.0ms | Allocations: 147)
+  [1m[36mCategory Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (0.5ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" IN ($1, $2, $3)[0m  [["category_id", 5], ["category_id", 4], ["category_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  Rendered categories/_category.html.erb (Duration: 1.6ms | Allocations: 649)
+  Rendered categories/_category.html.erb (Duration: 1.2ms | Allocations: 452)
+  Rendered categories/_category.html.erb (Duration: 1.4ms | Allocations: 477)
+  Rendered categories/index.html.erb within layouts/application (Duration: 28.6ms | Allocations: 7746)
+  Rendered layout layouts/application.html.erb (Duration: 46.5ms | Allocations: 20485)
+Completed 200 OK in 73ms (Views: 43.1ms | ActiveRecord: 11.4ms | Allocations: 27980)
+
+
+Started GET "/categories/new" for ::1 at 2023-04-01 17:55:53 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 20.8ms | Allocations: 7102)
+  Rendered categories/new.html.erb within layouts/application (Duration: 21.7ms | Allocations: 7205)
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | Allocations: 9221)
+Completed 200 OK in 37ms (Views: 29.2ms | ActiveRecord: 0.5ms | Allocations: 10912)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 17:55:58 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"education", "icon"=>"icons/trading.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "education"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 5.5ms | Allocations: 2446)
+  Rendered categories/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2543)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 2630)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.4ms | Allocations: 7169)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    19:   <div>
+    20:     <%= form.label :icon, class:"form-label"%>
+    21:     <ul class="list-unstyled d-flex flex-row justify-content-start gap-3 flex-wrap ">
+    22:       <% @icons.each do |icon| %>
+    23:         <li class="icon-list">
+    24:           <label class='icon-label'>
+    25:             <%= form.radio_button :icon, "icons/#{icon}", autofocus: true, required: true %>
+  
+app/views/categories/_form.html.erb:22
+app/views/categories/_form.html.erb:1
+app/views/categories/new.html.erb:6
+app/controllers/categories_controller.rb:35:in `block (2 levels) in create'
+app/controllers/categories_controller.rb:30:in `create'
+Started GET "/categories/new" for ::1 at 2023-04-01 17:57:17 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 15.3ms | Allocations: 7081)
+  Rendered categories/new.html.erb within layouts/application (Duration: 15.9ms | Allocations: 7180)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 9228)
+Completed 200 OK in 31ms (Views: 23.6ms | ActiveRecord: 0.4ms | Allocations: 10930)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 17:57:24 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"Delivery", "icon"=>"icons/delivery.jpeg"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "Delivery"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 4.8ms | Allocations: 2438)
+  Rendered categories/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 2535)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 2622)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.7ms | Allocations: 6918)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    19:   <div>
+    20:     <%= form.label :icon, class:"form-label"%>
+    21:     <ul class="list-unstyled d-flex flex-row justify-content-start gap-3 flex-wrap ">
+    22:       <% @icons.each do |icon| %>
+    23:         <li class="icon-list">
+    24:           <label class='icon-label'>
+    25:             <%= form.radio_button :icon, "icons/#{icon}", autofocus: true, required: true %>
+  
+app/views/categories/_form.html.erb:22
+app/views/categories/_form.html.erb:1
+app/views/categories/new.html.erb:6
+app/controllers/categories_controller.rb:35:in `block (2 levels) in create'
+app/controllers/categories_controller.rb:30:in `create'
+Started POST "/__web_console/repl_sessions/fd4460b80b90653438ec845f128b9989/trace" for ::1 at 2023-04-01 17:57:30 +0300
+Started POST "/__web_console/repl_sessions/fd4460b80b90653438ec845f128b9989/trace" for ::1 at 2023-04-01 17:57:33 +0300
+Started GET "/categories/new" for ::1 at 2023-04-01 17:59:09 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 867.9ms | Allocations: 31706)
+  Rendered categories/new.html.erb within layouts/application (Duration: 870.6ms | Allocations: 32339)
+  Rendered layout layouts/application.html.erb (Duration: 925.0ms | Allocations: 45436)
+Completed 200 OK in 992ms (Views: 930.7ms | ActiveRecord: 11.7ms | Allocations: 61918)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 17:59:16 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"education", "icon"=>"icons/education.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "education"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 6.9ms | Allocations: 2870)
+  Rendered categories/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 2969)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 3057)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 2.5ms | Allocations: 9052)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    19:   <div>
+    20:     <%= form.label :icon, class:"form-label"%>
+    21:     <ul class="list-unstyled d-flex flex-row justify-content-start gap-3 flex-wrap ">
+    22:       <% @icons.each do |icon| %>
+    23:         <li class="icon-list">
+    24:           <label class='icon-label'>
+    25:             <%= form.radio_button :icon, "icons/#{icon}", autofocus: true, required: true %>
+  
+app/views/categories/_form.html.erb:22
+app/views/categories/_form.html.erb:1
+app/views/categories/new.html.erb:6
+app/controllers/categories_controller.rb:35:in `block (2 levels) in create'
+app/controllers/categories_controller.rb:30:in `create'
+Started GET "/categories/new" for ::1 at 2023-04-01 18:01:15 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 22.8ms | Allocations: 7571)
+  Rendered categories/new.html.erb within layouts/application (Duration: 24.6ms | Allocations: 7886)
+  Rendered layout layouts/application.html.erb (Duration: 29.7ms | Allocations: 10157)
+Completed 200 OK in 40ms (Views: 32.3ms | ActiveRecord: 0.5ms | Allocations: 12347)
+
+
+Started GET "/categories" for ::1 at 2023-04-01 18:01:18 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 1.6ms | Allocations: 312)
+  [1m[36mCategory Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (0.9ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" IN ($1, $2, $3)[0m  [["category_id", 5], ["category_id", 4], ["category_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  Rendered categories/_category.html.erb (Duration: 1.8ms | Allocations: 762)
+  Rendered categories/_category.html.erb (Duration: 1.2ms | Allocations: 446)
+  Rendered categories/_category.html.erb (Duration: 1.1ms | Allocations: 471)
+  Rendered categories/index.html.erb within layouts/application (Duration: 48.9ms | Allocations: 15172)
+  Rendered layout layouts/application.html.erb (Duration: 54.3ms | Allocations: 17189)
+Completed 200 OK in 63ms (Views: 50.8ms | ActiveRecord: 5.2ms | Allocations: 19069)
+
+
+Started GET "/categories/new" for ::1 at 2023-04-01 18:01:22 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 23.1ms | Allocations: 7004)
+  Rendered categories/new.html.erb within layouts/application (Duration: 23.8ms | Allocations: 7103)
+  Rendered layout layouts/application.html.erb (Duration: 28.9ms | Allocations: 9119)
+Completed 200 OK in 39ms (Views: 30.0ms | ActiveRecord: 0.7ms | Allocations: 10819)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 18:01:30 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"test", "icon"=>"icons/bank.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "test"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Create (1.1ms)[0m  [1m[32mINSERT INTO "categories" ("author_id", "name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["author_id", 3], ["name", "test"], ["icon", "icons/bank.png"], ["created_at", "2023-04-01 15:01:30.663756"], ["updated_at", "2023-04-01 15:01:30.663756"]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (36.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+Redirected to http://[::1]:3000/categories
+Completed 302 Found in 70ms (ActiveRecord: 39.5ms | Allocations: 5635)
+
+
+Started GET "/categories" for ::1 at 2023-04-01 18:01:30 +0300
+Processing by CategoriesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 0.4ms | Allocations: 110)
+  [1m[36mCategory Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (1.1ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" IN ($1, $2, $3, $4)[0m  [["category_id", 6], ["category_id", 5], ["category_id", 4], ["category_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  Rendered categories/_category.html.erb (Duration: 2.4ms | Allocations: 600)
+  Rendered categories/_category.html.erb (Duration: 1.5ms | Allocations: 451)
+  Rendered categories/_category.html.erb (Duration: 1.7ms | Allocations: 453)
+  Rendered categories/_category.html.erb (Duration: 2.3ms | Allocations: 478)
+  Rendered categories/index.html.erb within layouts/application (Duration: 24.3ms | Allocations: 5008)
+  Rendered layout layouts/application.html.erb (Duration: 31.4ms | Allocations: 7058)
+Completed 200 OK in 42ms (Views: 30.3ms | ActiveRecord: 2.7ms | Allocations: 8836)
+
+
+Started GET "/categories/new" for ::1 at 2023-04-01 18:01:33 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 16.8ms | Allocations: 7085)
+  Rendered categories/new.html.erb within layouts/application (Duration: 17.7ms | Allocations: 7184)
+  Rendered layout layouts/application.html.erb (Duration: 23.2ms | Allocations: 9201)
+Completed 200 OK in 31ms (Views: 24.2ms | ActiveRecord: 0.5ms | Allocations: 10911)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 18:01:40 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"rent", "icon"=>"icons/education.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "rent"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 6.0ms | Allocations: 2446)
+  Rendered categories/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2543)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 2630)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 2.0ms | Allocations: 6951)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    19:   <div>
+    20:     <%= form.label :icon, class:"form-label"%>
+    21:     <ul class="list-unstyled d-flex flex-row justify-content-start gap-3 flex-wrap ">
+    22:       <% @icons.each do |icon| %>
+    23:         <li class="icon-list">
+    24:           <label class='icon-label'>
+    25:             <%= form.radio_button :icon, "icons/#{icon}", autofocus: true, required: true %>
+  
+app/views/categories/_form.html.erb:22
+app/views/categories/_form.html.erb:1
+app/views/categories/new.html.erb:6
+app/controllers/categories_controller.rb:35:in `block (2 levels) in create'
+app/controllers/categories_controller.rb:30:in `create'
+Started GET "/categories/new" for ::1 at 2023-04-01 18:01:54 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 22.4ms | Allocations: 7092)
+  Rendered categories/new.html.erb within layouts/application (Duration: 23.2ms | Allocations: 7191)
+  Rendered layout layouts/application.html.erb (Duration: 29.9ms | Allocations: 9240)
+Completed 200 OK in 38ms (Views: 31.0ms | ActiveRecord: 0.4ms | Allocations: 10928)
+
+
+Started GET "/categories/new" for ::1 at 2023-04-01 18:01:54 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 17.5ms | Allocations: 7092)
+  Rendered categories/new.html.erb within layouts/application (Duration: 18.5ms | Allocations: 7192)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 9241)
+Completed 200 OK in 37ms (Views: 26.1ms | ActiveRecord: 0.4ms | Allocations: 10928)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 18:02:00 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"rent", "icon"=>"icons/advert.jpeg"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "rent"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 7.2ms | Allocations: 2439)
+  Rendered categories/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 2536)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 2623)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 2.8ms | Allocations: 6954)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    19:   <div>
+    20:     <%= form.label :icon, class:"form-label"%>
+    21:     <ul class="list-unstyled d-flex flex-row justify-content-start gap-3 flex-wrap ">
+    22:       <% @icons.each do |icon| %>
+    23:         <li class="icon-list">
+    24:           <label class='icon-label'>
+    25:             <%= form.radio_button :icon, "icons/#{icon}", autofocus: true, required: true %>
+  
+app/views/categories/_form.html.erb:22
+app/views/categories/_form.html.erb:1
+app/views/categories/new.html.erb:6
+app/controllers/categories_controller.rb:35:in `block (2 levels) in create'
+app/controllers/categories_controller.rb:30:in `create'
+Started GET "/categories/new" for ::1 at 2023-04-01 18:03:52 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/new.html.erb within layouts/application (Duration: 23.3ms | Allocations: 7674)
+  Rendered layout layouts/application.html.erb (Duration: 30.9ms | Allocations: 9944)
+Completed 200 OK in 42ms (Views: 34.0ms | ActiveRecord: 0.4ms | Allocations: 12134)
+
+
+Started GET "/categories" for ::1 at 2023-04-01 18:03:54 +0300
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 1.6ms | Allocations: 299)
+  [1m[36mCategory Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 3], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (0.7ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" IN ($1, $2, $3, $4)[0m  [["category_id", 6], ["category_id", 5], ["category_id", 4], ["category_id", 3]]
+  ↳ app/views/categories/index.html.erb:12
+  Rendered categories/_category.html.erb (Duration: 2.8ms | Allocations: 745)
+  Rendered categories/_category.html.erb (Duration: 1.8ms | Allocations: 444)
+  Rendered categories/_category.html.erb (Duration: 1.5ms | Allocations: 446)
+  Rendered categories/_category.html.erb (Duration: 1.2ms | Allocations: 471)
+  Rendered categories/index.html.erb within layouts/application (Duration: 25.0ms | Allocations: 5785)
+  Rendered layout layouts/application.html.erb (Duration: 30.1ms | Allocations: 7801)
+Completed 200 OK in 39ms (Views: 28.9ms | ActiveRecord: 2.6ms | Allocations: 9608)
+
+
+Started GET "/categories/new" for ::1 at 2023-04-01 18:03:56 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/new.html.erb within layouts/application (Duration: 27.6ms | Allocations: 7040)
+  Rendered layout layouts/application.html.erb (Duration: 33.5ms | Allocations: 9056)
+Completed 200 OK in 43ms (Views: 34.7ms | ActiveRecord: 0.5ms | Allocations: 10759)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 18:04:02 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"education", "icon"=>"icons/web.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "education"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/new.html.erb within layouts/application (Duration: 11.9ms | Allocations: 2343)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 2430)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 2.2ms | Allocations: 6737)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    24:   <div>
+    25:     <%= form.label :icon, class:"form-label"%>
+    26:     <ul class="list-unstyled d-flex flex-row justify-content-start gap-3 flex-wrap ">
+    27:       <% @icons.each do |icon| %>
+    28:         <li class="icon-list">
+    29:           <label class='icon-label'>
+    30:             <%= form.radio_button :icon, "icons/#{icon}", autofocus: true, required: true %>
+  
+app/views/categories/new.html.erb:27
+app/views/categories/new.html.erb:6
+app/controllers/categories_controller.rb:35:in `block (2 levels) in create'
+app/controllers/categories_controller.rb:30:in `create'
+Started GET "/categories/new" for ::1 at 2023-04-01 18:05:38 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 2691)
+  Rendered layout layouts/application.html.erb (Duration: 12.5ms | Allocations: 2779)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.5ms | Allocations: 4921)
+
+
+  
+ActionView::Template::Error (The asset "icon/trading.png" is not present in the asset pipeline.
+):
+    11:         <li class="icon-list">
+    12:           <label class='icon-label'>
+    13:             <%= form.radio_button :icon, "icons/#{icon}", autofocus: true, required: true %>
+    14:             <%= image_tag "icon/#{icon}", class: 'icon-img' %>
+    15:           </label>
+    16:         </li>
+    17:       <% end %>
+  
+app/views/categories/new.html.erb:14
+app/views/categories/new.html.erb:10:in `each'
+app/views/categories/new.html.erb:10
+app/views/categories/new.html.erb:5
+Started GET "/categories/new" for ::1 at 2023-04-01 18:06:17 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/new.html.erb within layouts/application (Duration: 44.2ms | Allocations: 7482)
+  Rendered layout layouts/application.html.erb (Duration: 57.2ms | Allocations: 9752)
+Completed 200 OK in 75ms (Views: 62.5ms | ActiveRecord: 0.5ms | Allocations: 11914)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 18:06:29 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"education", "icon"=>"icons/software.png"}, "commit"=>"Add Category"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "education"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1701)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 1788)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 2.3ms | Allocations: 6095)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     7:     <%= form.text_field :name, autofocus: true, class: 'form-name', required: true %>
+     8:     <%= form.label :icon, class: 'form-label icon' %>
+     9:     <ul class="icon-container">
+    10:       <% @icons.each do |icon| %>
+    11:         <li class="icon-list">
+    12:           <label class='icon-label'>
+    13:             <%= form.radio_button :icon, "icons/#{icon}", autofocus: true, required: true %>
+  
+app/views/categories/new.html.erb:10
+app/views/categories/new.html.erb:5
+app/controllers/categories_controller.rb:35:in `block (2 levels) in create'
+app/controllers/categories_controller.rb:30:in `create'
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (54.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (436.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Budget_App_development"[0m
+  [1m[35m (378.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Budget_App_test"[0m
+  [1m[35m (1322.4ms)[0m  [1m[35mCREATE DATABASE "Budget_App_development" ENCODING = 'unicode'[0m
+  [1m[35m (934.2ms)[0m  [1m[35mCREATE DATABASE "Budget_App_test" ENCODING = 'unicode'[0m
+  [1m[35m (153.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (140.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2122188891063861270)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230328075548)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (137.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230328075548"]]
+  [1m[36mTRANSACTION (18.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategories (20230328080106)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (126.5ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "author_id" bigint NOT NULL, "name" character varying, "icon" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_139f1652e1"
+FOREIGN KEY ("author_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (71.7ms)[0m  [1m[35mCREATE INDEX "index_categories_on_author_id" ON "categories" ("author_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230328080106"]]
+  [1m[36mTRANSACTION (19.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateExpenses (20230328080334)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (138.7ms)[0m  [1m[35mCREATE TABLE "expenses" ("id" bigserial primary key, "author_id" bigint NOT NULL, "name" character varying, "amount" float, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_896acdaedb"
+FOREIGN KEY ("author_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (51.1ms)[0m  [1m[35mCREATE INDEX "index_expenses_on_author_id" ON "expenses" ("author_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230328080334"]]
+  [1m[36mTRANSACTION (18.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategoryExpenses (20230328084948)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (92.9ms)[0m  [1m[35mCREATE TABLE "category_expenses" ("id" bigserial primary key, "category_id" bigint NOT NULL, "expense_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_e86a321b58"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+, CONSTRAINT "fk_rails_f3e3cad7b7"
+FOREIGN KEY ("expense_id")
+  REFERENCES "expenses" ("id")
+)[0m
+  [1m[35m (78.5ms)[0m  [1m[35mCREATE INDEX "index_category_expenses_on_category_id" ON "category_expenses" ("category_id")[0m
+  [1m[35m (74.5ms)[0m  [1m[35mCREATE INDEX "index_category_expenses_on_expense_id" ON "category_expenses" ("expense_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230328084948"]]
+  [1m[36mTRANSACTION (25.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDeviseToUsers (20230328121305)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (21.3ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp(6)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp(6)[0m
+  [1m[35m (43.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (85.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230328121305"]]
+  [1m[36mTRANSACTION (256.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-01 15:08:41.357945"], ["updated_at", "2023-04-01 15:08:41.357945"]]
+  [1m[36mTRANSACTION (22.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(2122188891063861270)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/categories/new" for ::1 at 2023-04-01 18:09:24 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 401 Unauthorized in 112ms (ActiveRecord: 24.2ms | Allocations: 5950)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-01 18:09:24 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 3.7ms | Allocations: 389)
+  Rendered devise/shared/_links.html.erb (Duration: 6.3ms | Allocations: 661)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 42.4ms | Allocations: 3918)
+  Rendered layout layouts/application.html.erb (Duration: 309.2ms | Allocations: 39191)
+Completed 200 OK in 384ms (Views: 329.8ms | ActiveRecord: 0.0ms | Allocations: 46487)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-04-01 18:09:30 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.5ms | Allocations: 219)
+  Rendered devise/shared/_links.html.erb (Duration: 1.8ms | Allocations: 140)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 24.0ms | Allocations: 2501)
+  Rendered layout layouts/application.html.erb (Duration: 41.4ms | Allocations: 4682)
+Completed 200 OK in 62ms (Views: 57.9ms | ActiveRecord: 0.0ms | Allocations: 5796)
+
+
+Started POST "/users" for ::1 at 2023-04-01 18:09:44 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"john", "email"=>"john@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (3.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "john"], ["created_at", "2023-04-01 15:09:46.008759"], ["updated_at", "2023-04-01 15:09:46.008759"], ["email", "john@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (13.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://[::1]:3000/categories/new
+Completed 303 See Other in 1495ms (ActiveRecord: 20.4ms | Allocations: 14712)
+
+
+Started GET "/categories/new" for ::1 at 2023-04-01 18:09:46 +0300
+Processing by CategoriesController#new as TURBO_STREAM
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 110.1ms | Allocations: 8021)
+  Rendered categories/new.html.erb within layouts/application (Duration: 116.3ms | Allocations: 8395)
+  Rendered layout layouts/application.html.erb (Duration: 140.2ms | Allocations: 10492)
+Completed 200 OK in 258ms (Views: 150.2ms | ActiveRecord: 19.3ms | Allocations: 16776)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 18:10:03 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"education", "icon"=>"icons/education.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (2.6ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "education"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Create (3.8ms)[0m  [1m[32mINSERT INTO "categories" ("author_id", "name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["author_id", 1], ["name", "education"], ["icon", "icons/education.png"], ["created_at", "2023-04-01 15:10:03.764876"], ["updated_at", "2023-04-01 15:10:03.764876"]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (44.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+Redirected to http://[::1]:3000/categories
+Completed 302 Found in 169ms (ActiveRecord: 53.2ms | Allocations: 6058)
+
+
+Started GET "/categories" for ::1 at 2023-04-01 18:10:03 +0300
+Processing by CategoriesController#index as TURBO_STREAM
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 1.7ms | Allocations: 121)
+  [1m[36mCategory Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 1], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (2.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 1]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (1.9ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/views/categories/index.html.erb:12
+  Rendered categories/_category.html.erb (Duration: 8.9ms | Allocations: 764)
+  Rendered categories/index.html.erb within layouts/application (Duration: 107.5ms | Allocations: 7347)
+  Rendered layout layouts/application.html.erb (Duration: 124.9ms | Allocations: 9365)
+Completed 200 OK in 150ms (Views: 115.8ms | ActiveRecord: 13.1ms | Allocations: 11278)
+
+
+Started GET "/categories/new" for ::1 at 2023-04-01 18:10:08 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 89.7ms | Allocations: 7004)
+  Rendered categories/new.html.erb within layouts/application (Duration: 92.3ms | Allocations: 7103)
+  Rendered layout layouts/application.html.erb (Duration: 115.4ms | Allocations: 9120)
+Completed 200 OK in 146ms (Views: 120.0ms | ActiveRecord: 1.4ms | Allocations: 10824)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 18:10:15 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"delivery", "icon"=>"icons/delivery.jpeg"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "delivery"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Create (9.9ms)[0m  [1m[32mINSERT INTO "categories" ("author_id", "name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["author_id", 1], ["name", "delivery"], ["icon", "icons/delivery.jpeg"], ["created_at", "2023-04-01 15:10:15.190644"], ["updated_at", "2023-04-01 15:10:15.190644"]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (17.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+Redirected to http://[::1]:3000/categories
+Completed 302 Found in 110ms (ActiveRecord: 31.8ms | Allocations: 4540)
+
+
+Started GET "/categories" for ::1 at 2023-04-01 18:10:15 +0300
+Processing by CategoriesController#index as TURBO_STREAM
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 1.7ms | Allocations: 110)
+  [1m[36mCategory Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 1], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (2.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 1]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (2.2ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" IN ($1, $2)[0m  [["category_id", 2], ["category_id", 1]]
+  ↳ app/views/categories/index.html.erb:12
+  Rendered categories/_category.html.erb (Duration: 8.2ms | Allocations: 591)
+  Rendered categories/_category.html.erb (Duration: 7.3ms | Allocations: 471)
+  Rendered categories/index.html.erb within layouts/application (Duration: 67.8ms | Allocations: 3725)
+  Rendered layout layouts/application.html.erb (Duration: 91.7ms | Allocations: 5741)
+Completed 200 OK in 124ms (Views: 89.3ms | ActiveRecord: 7.5ms | Allocations: 7468)
+
+
+Started GET "/categories/new" for ::1 at 2023-04-01 18:10:18 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 99.5ms | Allocations: 7093)
+  Rendered categories/new.html.erb within layouts/application (Duration: 104.0ms | Allocations: 7192)
+  Rendered layout layouts/application.html.erb (Duration: 131.0ms | Allocations: 9241)
+Completed 200 OK in 165ms (Views: 138.9ms | ActiveRecord: 1.0ms | Allocations: 10941)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 18:10:25 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"rent", "icon"=>"icons/software.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "rent"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Create (3.1ms)[0m  [1m[32mINSERT INTO "categories" ("author_id", "name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["author_id", 1], ["name", "rent"], ["icon", "icons/software.png"], ["created_at", "2023-04-01 15:10:25.517957"], ["updated_at", "2023-04-01 15:10:25.517957"]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (23.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+Redirected to http://[::1]:3000/categories
+Completed 302 Found in 118ms (ActiveRecord: 30.8ms | Allocations: 4562)
+
+
+Started GET "/categories" for ::1 at 2023-04-01 18:10:25 +0300
+Processing by CategoriesController#index as TURBO_STREAM
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 2.1ms | Allocations: 110)
+  [1m[36mCategory Exists? (2.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 1], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (1.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 1]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (2.0ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" IN ($1, $2, $3)[0m  [["category_id", 3], ["category_id", 2], ["category_id", 1]]
+  ↳ app/views/categories/index.html.erb:12
+  Rendered categories/_category.html.erb (Duration: 6.5ms | Allocations: 601)
+  Rendered categories/_category.html.erb (Duration: 7.0ms | Allocations: 477)
+  Rendered categories/_category.html.erb (Duration: 6.4ms | Allocations: 451)
+  Rendered categories/index.html.erb within layouts/application (Duration: 72.0ms | Allocations: 4335)
+  Rendered layout layouts/application.html.erb (Duration: 96.3ms | Allocations: 6351)
+Completed 200 OK in 124ms (Views: 94.4ms | ActiveRecord: 6.8ms | Allocations: 8116)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (380.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Budget_App_development"[0m
+  [1m[35m (458.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Budget_App_test"[0m
+  [1m[35m (1006.9ms)[0m  [1m[35mCREATE DATABASE "Budget_App_development" ENCODING = 'unicode'[0m
+  [1m[35m (1124.3ms)[0m  [1m[35mCREATE DATABASE "Budget_App_test" ENCODING = 'unicode'[0m
+  [1m[35m (464.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (556.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2122188891063861270)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230328075548)
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (158.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230328075548"]]
+  [1m[36mTRANSACTION (19.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategories (20230328080106)
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (156.1ms)[0m  [1m[35mCREATE TABLE "categories" ("id" bigserial primary key, "author_id" bigint NOT NULL, "name" character varying, "icon" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_139f1652e1"
+FOREIGN KEY ("author_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (55.0ms)[0m  [1m[35mCREATE INDEX "index_categories_on_author_id" ON "categories" ("author_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230328080106"]]
+  [1m[36mTRANSACTION (22.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateExpenses (20230328080334)
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (143.1ms)[0m  [1m[35mCREATE TABLE "expenses" ("id" bigserial primary key, "author_id" bigint NOT NULL, "name" character varying, "amount" float, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_896acdaedb"
+FOREIGN KEY ("author_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (55.0ms)[0m  [1m[35mCREATE INDEX "index_expenses_on_author_id" ON "expenses" ("author_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230328080334"]]
+  [1m[36mTRANSACTION (12.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateCategoryExpenses (20230328084948)
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (71.4ms)[0m  [1m[35mCREATE TABLE "category_expenses" ("id" bigserial primary key, "category_id" bigint NOT NULL, "expense_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_e86a321b58"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+, CONSTRAINT "fk_rails_f3e3cad7b7"
+FOREIGN KEY ("expense_id")
+  REFERENCES "expenses" ("id")
+)[0m
+  [1m[35m (42.1ms)[0m  [1m[35mCREATE INDEX "index_category_expenses_on_category_id" ON "category_expenses" ("category_id")[0m
+  [1m[35m (58.1ms)[0m  [1m[35mCREATE INDEX "index_category_expenses_on_expense_id" ON "category_expenses" ("expense_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230328084948"]]
+  [1m[36mTRANSACTION (14.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDeviseToUsers (20230328121305)
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.1ms)[0m  [1m[35mALTER TABLE "users" ADD "email" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" character varying DEFAULT '' NOT NULL[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" character varying[0m
+  [1m[35m (2.3ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" timestamp(6)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" timestamp(6)[0m
+  [1m[35m (59.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (57.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230328121305"]]
+  [1m[36mTRANSACTION (17.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-04-01 15:11:02.758767"], ["updated_at", "2023-04-01 15:11:02.758767"]]
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT pg_advisory_unlock(2122188891063861270)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (6.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/categories" for ::1 at 2023-04-01 18:11:22 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CategoriesController#index as HTML
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 401 Unauthorized in 181ms (ActiveRecord: 39.3ms | Allocations: 5953)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-01 18:11:23 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 6.1ms | Allocations: 389)
+  Rendered devise/shared/_links.html.erb (Duration: 11.8ms | Allocations: 661)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 76.3ms | Allocations: 3918)
+  Rendered layout layouts/application.html.erb (Duration: 541.8ms | Allocations: 38670)
+Completed 200 OK in 669ms (Views: 581.7ms | ActiveRecord: 0.0ms | Allocations: 45967)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-04-01 18:12:54 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 9.1ms | Allocations: 219)
+  Rendered devise/shared/_links.html.erb (Duration: 3.3ms | Allocations: 140)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 62.6ms | Allocations: 2501)
+  Rendered layout layouts/application.html.erb (Duration: 98.2ms | Allocations: 4682)
+Completed 200 OK in 130ms (Views: 118.2ms | ActiveRecord: 0.0ms | Allocations: 5799)
+
+
+Started POST "/users" for ::1 at 2023-04-01 18:13:11 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"john", "email"=>"john@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (3.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "john@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (4.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "created_at", "updated_at", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "john"], ["created_at", "2023-04-01 15:13:13.923844"], ["updated_at", "2023-04-01 15:13:13.923844"], ["email", "john@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (287.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://[::1]:3000/categories
+Completed 303 See Other in 2572ms (ActiveRecord: 297.7ms | Allocations: 9106)
+
+
+Started GET "/categories" for ::1 at 2023-04-01 18:13:14 +0300
+Processing by CategoriesController#index as TURBO_STREAM
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 2.5ms | Allocations: 143)
+  [1m[36mCategory Exists? (4.2ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 1], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  Rendered categories/index.html.erb within layouts/application (Duration: 27.4ms | Allocations: 1360)
+  Rendered layout layouts/application.html.erb (Duration: 61.5ms | Allocations: 3602)
+Completed 200 OK in 180ms (Views: 69.5ms | ActiveRecord: 15.9ms | Allocations: 8460)
+
+
+Started GET "/categories/new" for ::1 at 2023-04-01 18:13:28 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 294.1ms | Allocations: 14956)
+  Rendered categories/new.html.erb within layouts/application (Duration: 330.2ms | Allocations: 15256)
+  Rendered layout layouts/application.html.erb (Duration: 359.5ms | Allocations: 17272)
+Completed 200 OK in 514ms (Views: 369.2ms | ActiveRecord: 19.4ms | Allocations: 21120)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 18:13:42 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"education", "icon"=>"icons/education.png"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "education"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Create (5.0ms)[0m  [1m[32mINSERT INTO "categories" ("author_id", "name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["author_id", 1], ["name", "education"], ["icon", "icons/education.png"], ["created_at", "2023-04-01 15:13:43.128648"], ["updated_at", "2023-04-01 15:13:43.128648"]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (23.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+Redirected to http://[::1]:3000/categories
+Completed 302 Found in 163ms (ActiveRecord: 33.4ms | Allocations: 5430)
+
+
+Started GET "/categories" for ::1 at 2023-04-01 18:13:43 +0300
+Processing by CategoriesController#index as TURBO_STREAM
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 1.9ms | Allocations: 110)
+  [1m[36mCategory Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 1], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (19.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 1]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (3.3ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/views/categories/index.html.erb:12
+  Rendered categories/_category.html.erb (Duration: 15.6ms | Allocations: 763)
+  Rendered categories/index.html.erb within layouts/application (Duration: 183.1ms | Allocations: 6940)
+  Rendered layout layouts/application.html.erb (Duration: 221.4ms | Allocations: 8958)
+Completed 200 OK in 263ms (Views: 195.0ms | ActiveRecord: 35.2ms | Allocations: 10719)
+
+
+Started GET "/categories/1" for ::1 at 2023-04-01 18:13:59 +0300
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (1.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:68:in `set_category'
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:11:in `show'
+  [1m[36mCategoryExpense Load (1.8ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" = $1 ORDER BY "category_expenses"."created_at" DESC[0m  [["category_id", 1]]
+  ↳ app/controllers/categories_controller.rb:13:in `reduce'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 2.0ms | Allocations: 119)
+  Rendered categories/_category.html.erb (Duration: 8.8ms | Allocations: 591)
+  Rendered categories/show.html.erb within layouts/application (Duration: 21.1ms | Allocations: 1254)
+  Rendered layout layouts/application.html.erb (Duration: 47.7ms | Allocations: 3262)
+Completed 200 OK in 155ms (Views: 57.7ms | ActiveRecord: 5.6ms | Allocations: 7657)
+
+
+Started GET "/categories/1/expenses/new" for ::1 at 2023-04-01 18:14:08 +0300
+Processing by ExpensesController#new as HTML
+  Parameters: {"category_id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering expenses/new.html.erb within layouts/application
+  [1m[36mCategory Load (2.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1[0m  [["author_id", 1]]
+  ↳ app/views/expenses/new.html.erb:14:in `map'
+  Rendered expenses/new.html.erb within layouts/application (Duration: 75.2ms | Allocations: 2262)
+  Rendered layout layouts/application.html.erb (Duration: 123.3ms | Allocations: 4449)
+Completed 200 OK in 288ms (Views: 132.8ms | ActiveRecord: 25.8ms | Allocations: 10152)
+
+
+Started POST "/categories/1/expenses" for ::1 at 2023-04-01 18:14:26 +0300
+Processing by ExpensesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "expense"=>{"name"=>"william", "amount"=>"200"}, "category"=>"1", "commit"=>"Add Expense", "category_id"=>"1"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (3.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/expenses_controller.rb:10:in `create'
+  [1m[36mExpense Create (6.3ms)[0m  [1m[32mINSERT INTO "expenses" ("author_id", "name", "amount", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["author_id", 1], ["name", "william"], ["amount", 200.0], ["created_at", "2023-04-01 15:14:26.984123"], ["updated_at", "2023-04-01 15:14:26.984123"]]
+  ↳ app/controllers/expenses_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (14.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/expenses_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/expenses_controller.rb:12:in `create'
+  [1m[36mCategory Load (2.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:12:in `create'
+  [1m[36mExpense Load (2.5ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:12:in `create'
+  [1m[36mCategoryExpense Create (7.5ms)[0m  [1m[32mINSERT INTO "category_expenses" ("category_id", "expense_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category_id", 1], ["expense_id", 1], ["created_at", "2023-04-01 15:14:27.244564"], ["updated_at", "2023-04-01 15:14:27.244564"]]
+  ↳ app/controllers/expenses_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (9.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/expenses_controller.rb:12:in `create'
+Redirected to http://[::1]:3000/categories/1
+Completed 302 Found in 414ms (ActiveRecord: 73.1ms | Allocations: 12880)
+
+
+Started GET "/categories/1" for ::1 at 2023-04-01 18:14:27 +0300
+Processing by CategoriesController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCategory Load (2.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:68:in `set_category'
+  [1m[36mCACHE Category Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:11:in `show'
+  [1m[36mCategoryExpense Load (1.9ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" = $1 ORDER BY "category_expenses"."created_at" DESC[0m  [["category_id", 1]]
+  ↳ app/controllers/categories_controller.rb:13:in `reduce'
+  [1m[36mExpense Load (1.7ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/categories_controller.rb:13:in `reduce'
+  Rendering layout layouts/application.html.erb
+  Rendering categories/show.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 2.0ms | Allocations: 119)
+  Rendered categories/_category.html.erb (Duration: 9.1ms | Allocations: 602)
+  Rendered categories/show.html.erb within layouts/application (Duration: 18.3ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 51.1ms | Allocations: 3015)
+Completed 200 OK in 168ms (Views: 55.6ms | ActiveRecord: 7.6ms | Allocations: 7226)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2023-04-01 18:14:45 +0300
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://[::1]:3000/users/sign_in
+Completed 303 See Other in 220ms (ActiveRecord: 2.2ms | Allocations: 7352)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-04-01 18:14:45 +0300
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 4.4ms | Allocations: 99)
+  Rendered devise/shared/_links.html.erb (Duration: 2.1ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 35.1ms | Allocations: 1452)
+  Rendered layout layouts/application.html.erb (Duration: 77.8ms | Allocations: 3559)
+Completed 200 OK in 93ms (Views: 83.5ms | ActiveRecord: 0.0ms | Allocations: 4178)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-04-01 18:15:11 +0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"john@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "john@gmail.com"], ["LIMIT", 1]]
+Redirected to http://[::1]:3000/
+Completed 303 See Other in 1891ms (ActiveRecord: 2.1ms | Allocations: 2734)
+
+
+Started GET "/" for ::1 at 2023-04-01 18:15:13 +0300
+Processing by CategoriesController#index as TURBO_STREAM
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 2.0ms | Allocations: 110)
+  [1m[36mCategory Exists? (2.5ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 1], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (2.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 1]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (2.7ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" = $1[0m  [["category_id", 1]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mExpense Load (2.1ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:16
+  Rendered categories/_category.html.erb (Duration: 11.9ms | Allocations: 591)
+  Rendered categories/index.html.erb within layouts/application (Duration: 83.5ms | Allocations: 3793)
+  Rendered layout layouts/application.html.erb (Duration: 125.2ms | Allocations: 5814)
+Completed 200 OK in 163ms (Views: 120.0ms | ActiveRecord: 11.3ms | Allocations: 7522)
+
+
+Started GET "/categories/new" for ::1 at 2023-04-01 18:20:30 +0300
+Processing by CategoriesController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 34.8ms | Allocations: 7081)
+  Rendered categories/new.html.erb within layouts/application (Duration: 35.8ms | Allocations: 7180)
+  Rendered layout layouts/application.html.erb (Duration: 45.5ms | Allocations: 9196)
+Completed 200 OK in 96ms (Views: 47.2ms | ActiveRecord: 18.6ms | Allocations: 13749)
+
+
+Started POST "/categories" for ::1 at 2023-04-01 18:20:38 +0300
+Processing by CategoriesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "category"=>{"name"=>"delivery", "icon"=>"icons/delivery.jpeg"}, "commit"=>"Create Category"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Exists? (3.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = $1 LIMIT $2[0m  [["name", "delivery"], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mCategory Create (2.0ms)[0m  [1m[32mINSERT INTO "categories" ("author_id", "name", "icon", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["author_id", 1], ["name", "delivery"], ["icon", "icons/delivery.jpeg"], ["created_at", "2023-04-01 15:20:38.340312"], ["updated_at", "2023-04-01 15:20:38.340312"]]
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+  [1m[36mTRANSACTION (56.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:31:in `block in create'
+Redirected to http://[::1]:3000/categories
+Completed 302 Found in 95ms (ActiveRecord: 62.6ms | Allocations: 4563)
+
+
+Started GET "/categories" for ::1 at 2023-04-01 18:20:38 +0300
+Processing by CategoriesController#index as TURBO_STREAM
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering categories/index.html.erb within layouts/application
+  Rendered navbar/_new.html.erb (Duration: 0.9ms | Allocations: 110)
+  [1m[36mCategory Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."author_id" = $1 LIMIT $2[0m  [["author_id", 1], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:8
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."author_id" = $1 ORDER BY "categories"."created_at" DESC[0m  [["author_id", 1]]
+  ↳ app/views/categories/index.html.erb:12
+  [1m[36mCategoryExpense Load (1.8ms)[0m  [1m[34mSELECT "category_expenses".* FROM "category_expenses" WHERE "category_expenses"."category_id" IN ($1, $2)[0m  [["category_id", 2], ["category_id", 1]]
+  ↳ app/views/categories/index.html.erb:12
+  Rendered categories/_category.html.erb (Duration: 3.0ms | Allocations: 602)
+  [1m[36mExpense Load (1.1ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/categories/index.html.erb:16
+  Rendered categories/_category.html.erb (Duration: 4.5ms | Allocations: 478)
+  Rendered categories/index.html.erb within layouts/application (Duration: 41.3ms | Allocations: 4505)
+  Rendered layout layouts/application.html.erb (Duration: 50.6ms | Allocations: 6554)
+Completed 200 OK in 62ms (Views: 46.6ms | ActiveRecord: 6.0ms | Allocations: 8296)
+
+

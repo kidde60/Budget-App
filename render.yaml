@@ -1,0 +1,19 @@
+databases:
+  - name: postgres
+    ipAllowList: []
+    databaseName: Budget_App_render
+    user: Budget_App_render
+
+services:
+  - type: web
+    name: Budget_App_render
+    env: ruby
+    buildCommand: "./render-build.sh"
+    startCommand: "bundle exec rails s"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: postgres
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
