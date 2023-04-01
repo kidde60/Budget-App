@@ -7,7 +7,7 @@ class CategoriesController < ApplicationController
   end
 
   # GET /categories/1 or /categories/1.json
-  def show;
+  def show
     @category = Category.find(params[:id])
     @category_expense = CategoryExpense.includes(:expense).where(category: @category).order(created_at: :desc)
     @total_amt = @category_expense.reduce(0) { |sum, obj| sum + obj.expense.amount }
