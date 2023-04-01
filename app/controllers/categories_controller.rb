@@ -3,15 +3,20 @@ class CategoriesController < ApplicationController
 
   # GET /categories or /categories.json
   def index
-    @categories = Category.all
+    @categories = Category.includes(:category_expenses).where(author: current_user).order(created_at: :desc)
   end
 
   # GET /categories/1 or /categories/1.json
-  def show; end
+  def show;
+    @category = Category.find(params[:id])
+    @category_expense = CategoryExpense.includes(:expense).where(category: @category).order(created_at: :desc)
+    @total_amt = @category_expense.reduce(0) { |sum, obj| sum + obj.expense.amount }
+  end
 
   # GET /categories/new
   def new
     @category = Category.new
+    @icons = Dir.entries('app/assets/images/icons').select { |icon| icon != '.' and icon != '..' }
   end
 
   # GET /categories/1/edit
